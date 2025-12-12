@@ -1,4 +1,207 @@
-🔎 Palindrome CheckerA fun and simple web application built with vanilla HTML, CSS, and JavaScript that determines if a given input text is a palindrome.The application adheres strictly to the definition of a palindrome by ignoring all punctuation, spacing, and case differences during the check.✨ FeaturesCase and Punctuation Agnostic: The core logic cleans the input by removing non-alphanumeric characters and converting everything to lowercase before comparison.Intuitive UI: A clean, modern interface styled with CSS, providing immediate visual feedback to the user.Client-Side Logic: Fast, instant checking with all logic running directly in the browser.Informative Alert: Prompts the user with an alert if they attempt to check an empty input.🛠️ Technology StackTechnologyRoleHTML5Provides the structure, including the input field, button, and result display area.CSS3Styles the page with a clean card layout, shadows, and responsive element sizing.JavaScriptContains the core palindrome logic, event handling, and DOM manipulation.🧠 Palindrome Logic ExplainedThe core of the palindrome check is handled by this line of JavaScript, which ensures accuracy for phrases like "A man, a plan, a canal. Panama":JavaScriptconst replaced = textInput.value.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-Cleaning the Input (.replace()):The Regular Expression /[^A-Za-z0-9]/g is used to find and remove any character that is NOT an uppercase letter (A-Z), a lowercase letter (a-z), or a digit (0-9).Example: "My age is 0, 0 si ega ym." becomes "Myageis00siega ym".Case Normalization (.toLowerCase()):The cleaned string is immediately converted to lowercase to ensure case doesn't cause a false negative.Example: "Myageis00siega ym" becomes "myageis00siega ym".Reversal and Comparison:The cleaned and lowered string (replaced) is converted to an array ([...replaced]), reversed, and then joined back into a string.The original replaced string is then compared directly to its reversed version (reversed). If they match, the input is a palindrome.⚙️ Installation and SetupSince this is a client-side project, deployment is simple.Clone the Repository:Bashgit clone [Your Repository URL Here]
-Navigate to the Project Directory:Bashcd palindrome-checker
-Run the Application:Open the index.html file in your web browser. You can usually do this by double-clicking the file.▶️ UsageOpen index.html.Type any word, phrase, or sentence into the input box.Click the "Check" button.The result will be displayed below the input area, telling you whether the text is a palindrome or not.Test Examples:Input TextExpected Resultmadamis a palindromeA man, a plan, a canal. Panamais a palindromeracecaris a palindromenot a palindromeis not a palindrome1 eye for of 1 eyeis a palindrome🤝 Contribution(If you are open to contributions, you can include this section)Feel free to fork the repository and submit pull requests. If you find any bugs or have suggestions for new features (like optimized performance for extremely long inputs), please open an issue!
+# Palindrome Checker
+
+  
+
+A fun and simple web application built with vanilla **HTML**, **CSS**, and **JavaScript** that determines whether a given input text is a palindrome.
+
+  
+
+The application adheres strictly to the definition of a palindrome by **ignoring punctuation, spacing, and case differences**.
+
+  
+
+---
+
+  
+
+## ✨ Features
+
+  
+
+-  **Case & Punctuation Agnostic:** Input is cleaned by removing non-alphanumeric characters and converting to lowercase.
+
+-  **Intuitive UI:** Clean, modern layout styled with CSS.
+
+-  **Client-Side Logic:** Fast and instant — all processing happens in the browser.
+
+-  **User-Friendly Alerts:** Alerts the user if they attempt to check an empty input.
+
+  
+
+---
+
+  
+
+## 🛠️ Technology Stack
+
+  
+
+| Technology | Role |
+
+|-----------|------|
+
+| **HTML5** | Provides structure (input field, button, result display). |
+
+| **CSS3** | Styles the interface with modern layout, shadows, and responsive elements. |
+
+| **JavaScript** | Implements the palindrome logic, DOM manipulation, and event handling. |
+
+  
+
+---
+
+  
+
+## 🧠 Palindrome Logic Explained
+
+  
+
+The core logic relies on cleaning the input, normalizing the case, reversing the string, and comparing the two.
+
+  
+
+### Clean the Input
+
+```javascript
+
+const  replaced = textInput.value.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+
+How  It  Works:
+
+1.  Cleaning  with .replace()
+
+The  Regular  Expression:
+
+  
+
+css
+
+Copy  code
+
+/[^A-Za-z0-9]/g
+
+removes  any  character  NOT  in:
+
+  
+
+A–Z
+
+  
+
+a–z
+
+  
+
+0–9
+
+  
+
+Example:
+
+"My age is 0, 0 si ega ym." → "Myageis00siegaym"
+
+  
+
+2.  Case  Normalization
+
+.toLowerCase() makes  the  comparison  case-insensitive.
+
+  
+
+Example:
+
+"Myageis00siegaym" → "myageis00siegaym"
+
+  
+
+3.  Reversal  and  Comparison
+
+The  string  is  reversed  and  checked  against  the  original:
+
+  
+
+javascript
+
+Copy  code
+
+const  reversed = [...replaced].reverse().join("");
+
+If  replaced === reversed, the  input  is  a  palindrome.
+
+  
+
+⚙️ Installation & Setup
+
+This  is  a  fully  client-side  project — setup  is  quick.
+
+  
+
+1.  Clone  the  Repository
+
+bash
+
+Copy  code
+
+git  clone https://github.com/PrinceLemayian/Palindrome-checker
+
+2.  Navigate  to  the  Project  Directory
+
+bash
+
+Copy  code
+
+cd  palindrome-checker
+
+3.  Run  the  Application
+
+Open  the  index.html  file  in  your  web  browser
+
+(usually  by  double-clicking  it).
+
+  
+
+▶️ Usage
+
+Open  index.html
+
+  
+
+Type  any  word, phrase, or  sentence  into  the  input  box
+
+  
+
+Click  the  "Check"  button
+
+  
+
+The  result  will  appear  below  the  input
+
+  
+
+✔️ Test  Examples
+
+Input  Text  Expected  Result
+
+madam  is  a  palindrome
+
+A  man, a  plan, a  canal. Panama  is  a  palindrome
+
+racecar  is  a  palindrome
+
+not  a  palindrome  is  not  a  palindrome
+
+1  eye  for  of  1  eye  is  a  palindrome
+
+  
+
+🤝 Contribution
+
+If  you're open to contributions:
+
+  
+
+Feel  free  to  fork  the  repository  and  create  pull  requests
+
+  
+
+Open  issues  for  bugs  or  feature  suggestions
