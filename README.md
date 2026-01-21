@@ -14,7 +14,7 @@ The application adheres strictly to the definition of a palindrome by **ignoring
 
   
 
-## ✨ Features
+## Features
 
   
 
@@ -34,17 +34,9 @@ The application adheres strictly to the definition of a palindrome by **ignoring
 
 ## 🛠️ Technology Stack
 
-  
-
-| Technology | Role |
-
-|-----------|------|
-
-| **HTML5** | Provides structure (input field, button, result display). |
-
-| **CSS3** | Styles the interface with modern layout, shadows, and responsive elements. |
-
-| **JavaScript** | Implements the palindrome logic, DOM manipulation, and event handling. |
+**HTML5** - Provides structure (input field, button, result display).  
+**CSS3** - Styles the interface with modern layout, shadows, and responsive elements.  
+**JavaScript** - Implements the palindrome logic, DOM manipulation, and event handling.  
 
   
 
@@ -52,7 +44,7 @@ The application adheres strictly to the definition of a palindrome by **ignoring
 
   
 
-## 🧠 Palindrome Logic Explained
+## Palindrome Logic Explained
 
   
 
@@ -62,146 +54,70 @@ The core logic relies on cleaning the input, normalizing the case, reversing the
 
 ### Clean the Input
 
-```javascript
+```js
 
 const  replaced = textInput.value.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 
-How  It  Works:
+```
+
+### How  It  Works:
 
 1.  Cleaning  with .replace()
 
 The  Regular  Expression:
 
-  
-
-css
-
-Copy  code
-
+```js
 /[^A-Za-z0-9]/g
-
-removes  any  character  NOT  in:
-
+```
+Removes  any  character  NOT  in:
+- A–Z
+- a–z
+- 0–9
   
-
-A–Z
-
-  
-
-a–z
-
-  
-
-0–9
-
-  
-
 Example:
 
+```
 "My age is 0, 0 si ega ym." → "Myageis00siegaym"
+```
 
-  
-
-2.  Case  Normalization
-
+2.  Case Normalization
 .toLowerCase() makes  the  comparison  case-insensitive.
 
-  
-
 Example:
 
+```
 "Myageis00siegaym" → "myageis00siegaym"
-
-  
+```
 
 3.  Reversal  and  Comparison
-
 The  string  is  reversed  and  checked  against  the  original:
-
-  
-
-javascript
-
-Copy  code
-
+```javascript
 const  reversed = [...replaced].reverse().join("");
-
+```
 If  replaced === reversed, the  input  is  a  palindrome.
 
-  
+### Installation & Setup
 
-⚙️ Installation & Setup
-
-This  is  a  fully  client-side  project — setup  is  quick.
-
-  
+This is a fully client-side project — setup is quick.
 
 1.  Clone  the  Repository
-
-bash
-
-Copy  code
-
+```bash
 git  clone https://github.com/PrinceLemayian/Palindrome-checker
+```
 
 2.  Navigate  to  the  Project  Directory
 
-bash
-
-Copy  code
-
+```bash
 cd  palindrome-checker
+```
 
 3.  Run  the  Application
-
 Open  the  index.html  file  in  your  web  browser
-
 (usually  by  double-clicking  it).
 
-  
+### Usage
 
-▶️ Usage
-
-Open  index.html
-
-  
-
-Type  any  word, phrase, or  sentence  into  the  input  box
-
-  
-
-Click  the  "Check"  button
-
-  
-
-The  result  will  appear  below  the  input
-
-  
-
-✔️ Test  Examples
-
-Input  Text  Expected  Result
-
-madam  is  a  palindrome
-
-A  man, a  plan, a  canal. Panama  is  a  palindrome
-
-racecar  is  a  palindrome
-
-not  a  palindrome  is  not  a  palindrome
-
-1  eye  for  of  1  eye  is  a  palindrome
-
-  
-
-🤝 Contribution
-
-If  you're open to contributions:
-
-  
-
-Feel  free  to  fork  the  repository  and  create  pull  requests
-
-  
-
-Open  issues  for  bugs  or  feature  suggestions
+- Open index.html 
+- Type  any  word, phrase, or  sentence  into  the  input  box
+- Click  the  "Check"  button
+- The  result  will  appear  below  the  input
